@@ -54,42 +54,42 @@ class hiera_integrations (
 ){
 
   validate_hash($cron)
-  if $cron {
+  if !empty($cron) {
     create_resources(cron, $cron)
   }
 
   validate_hash($file)
-  if $file {
+  if !empty($file) {
     create_resources(file, $file)
   }
 
   validate_hash($host)
-  if $host {
+  if !empty($host) {
     create_resources(host, $host)
   }
 
   validate_hash($mount)
-  if $mount {
+  if !empty($mount) {
     create_resources(mount, $mount)
   }
 
   validate_hash($notify)
-  if $notify {
+  if !empty($notify) {
     create_resources(notify, $notify)
   }
 
   validate_hash($resources)
-  if $resources {
+  if !empty($resources) {
     create_resources(resources, $resources)
   }
 
   validate_hash($service)
-  if $service {
+  if !empty($service) {
     create_resources(service, $service)
   }
 
   validate_hash($user)
-  if $user {
+  if !empty($user) {
     create_resources(user, $user)
   }
 
