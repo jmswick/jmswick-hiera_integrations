@@ -69,22 +69,22 @@ class hiera_integrations (
 
   validate_hash($mount)
   if $mount {
-    create_resoruces(mount, $mount)
+    create_resources(mount, $mount)
   }
 
   validate_hash($notify)
   if $notify {
-    create_resoruces(notify, $notify)
+    create_resources(notify, $notify)
   }
 
   validate_hash($resources)
   if $resources {
-    create_resoruces(resources, $resources)
+    create_resources(resources, $resources)
   }
 
   validate_hash($service)
   if $service {
-    create_resoruces(service, $service)
+    create_resources(service, $service)
   }
 
   validate_hash($user)
