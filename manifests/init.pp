@@ -43,13 +43,14 @@
 # Copyright 2017 Your name here, unless otherwise noted.
 #
 class hiera_integrations (
-  $cron    = {},
-  $file    = {},
-  $host    = {},
-  $mount   = {},
-  $notify  = {},
-  $service = {},
-  $user    = {},
+  $cron      = {},
+  $file      = {},
+  $host      = {},
+  $mount     = {},
+  $notify    = {},
+  $resources = {},
+  $service   = {},
+  $user      = {},
 ){
 
   validate_hash($cron)
