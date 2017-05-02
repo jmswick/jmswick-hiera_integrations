@@ -43,22 +43,51 @@
 # Copyright 2017 Your name here, unless otherwise noted.
 #
 class hiera_integrations (
-  $file   = {},
-  $notify = {},
-  $user   = {},
+  $cron    = {},
+  $file    = {},
+  $host    = {},
+  $mount   = {},
+  $notify  = {},
+  $service = {},
+  $user    = {},
 ){
-  validate_hash($file)
-  validate_hash($notify)
-  validate_hash($user)
 
+  validate_hash($cron)
+  if $cron {
+    create_resources(cron, $cron)
+  }
+
+  validate_hash($file)
   if $file {
     create_resources(file, $file)
   }
 
+  validate_hash($host)
+  if $host {
+    create_resources(host, $host)
+  }
+
+  validate_hash($mount)
+  if $mount {
+    create_resoruces(mount, $mount)
+  }
+
+  validate_hash($notify)
   if $notify {
     create_resoruces(notify, $notify)
   }
 
+  validate_hash($resources)
+  if $resources {
+    create_resoruces(resources, $resources)
+  }
+
+  validate_hash($service)
+  if $service {
+    create_resoruces(service, $service)
+  }
+
+  validate_hash($user)
   if $user {
     create_resources(user, $user)
   }
