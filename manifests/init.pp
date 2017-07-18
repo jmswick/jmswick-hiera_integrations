@@ -44,6 +44,7 @@
 #
 class hiera_integrations (
   $cron      = {},
+  $exec      = {},
   $file      = {},
   $host      = {},
   $mount     = {},
@@ -56,6 +57,11 @@ class hiera_integrations (
   validate_hash($cron)
   unless empty($cron) {
     create_resources(cron, $cron)
+  }
+
+  validate_hash($exec)
+  unless empty($exec) {
+    create_resources(exec, $exec)
   }
 
   validate_hash($file)
