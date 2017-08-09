@@ -51,6 +51,7 @@ class hiera_integrations (
   $notifies  = {},
   $resources = {},
   $service   = {},
+  $sshkey    = {},
   $user      = {},
 ){
 
@@ -92,6 +93,11 @@ class hiera_integrations (
   validate_hash($service)
   unless empty($service) {
     create_resources(service, $service)
+  }
+
+  validate_hash($sshkey)
+  unless empty($sshkey) {
+    create_resources(sshkey, $sshkey)
   }
 
   validate_hash($user)
