@@ -46,6 +46,7 @@ class hiera_integrations (
   $cron      = {},
   $exec      = {},
   $file      = {},
+  $group     = {},
   $host      = {},
   $mount     = {},
   $notifies  = {},
@@ -68,6 +69,11 @@ class hiera_integrations (
   validate_hash($file)
   unless empty($file) {
     create_resources(file, $file)
+  }
+
+  validate_hash($group)
+  unless empty($group) {
+    create_resources(group, $group)
   }
 
   validate_hash($host)

@@ -56,6 +56,7 @@ These are the resources that are currently supported by the module:
 
   * cron
   * file
+  * group
   * host
   * mount
   * notifies (See note below)
